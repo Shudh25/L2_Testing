@@ -1,1 +1,0 @@
-Feature: Reset Functionality on Login Page
