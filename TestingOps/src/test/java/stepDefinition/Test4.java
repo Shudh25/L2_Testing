@@ -1,5 +1,6 @@
 package stepDefinition;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.*;
@@ -69,5 +70,11 @@ public class Test4 {
 
         // Navigating Back to previous Page
         driver.navigate().back();
+    }
+    @After
+    public void closeBrowser() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
