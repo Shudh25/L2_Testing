@@ -1,5 +1,6 @@
 package stepDefinition;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -29,5 +30,12 @@ public class Test1 {
     @Then("the user should see the homepage")
     public void the_user_should_see_the_homepage() {
         System.out.println("STEP3 COMPLETED");
+    }
+
+    @After
+    public void closeBrowser() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
