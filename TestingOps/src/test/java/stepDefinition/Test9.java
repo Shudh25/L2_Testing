@@ -2,12 +2,8 @@ package stepDefinition;
 
 import io.cucumber.java.After;
 import io.cucumber.java.en.*;
-import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import static junit.framework.TestCase.assertEquals;

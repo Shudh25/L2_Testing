@@ -1,6 +1,6 @@
-Feature: Checking the Http response Code
+Feature: Testing Links Functionality on Navigation Bar
 
-  Scenario: Checking Http request
-    Given User opens the nural-company page
-    When scrolls the page
-    Then User enters the values
+  Scenario: Verify Links Functionality
+    Given User is on the Website
+    When User hovers on Resources
+    Then User clicks on Use Cases
