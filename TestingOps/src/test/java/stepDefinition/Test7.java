@@ -1,5 +1,6 @@
 package stepDefinition;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
 import org.openqa.selenium.*;
@@ -28,28 +29,25 @@ public class Test7 {
         driver.get("https://xenonstack.com");
 
         Thread.sleep(1000);
-        try {
-            // establish, open connection with URL
-            HttpURLConnection cn = (HttpURLConnection) new URL(driver.getCurrentUrl()).openConnection();
-            // set HEADER request
-            cn.setRequestMethod("HEAD");
-            // connection initiate
-            cn.connect();
-            //get response code
-            int res = cn.getResponseCode();
-            //Display
-            System.out.println("Http response code: " + res);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
 //      Scrolling to the element on Page
 //        WebElement UseCases = driver.findElement(By.xpath("/html/body/div[2]/section[8]/div/div/div[1]/div/div"));
 
         WebElement UseCases_Link = driver.findElement(By.xpath("/html/body/div[2]/section[8]/div/div/div[1]/div/div/a"));
-        WebElement UseCases_Link2 = driver.findElement(By.xpath("/html/body/div[2]/section[8]/div/div/div[2]/div/div[2]/div[3]"));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", UseCases_Link2);
 
+        Point point = UseCases_Link.getLocation();
+        int xcord = point.getX();
+        System.out.println("xCord : "+xcord +" pixels");
+        int ycord = point.getY();
+        System.out.println("yCord : "+ycord +" pixels");
+
+//        ((JavascriptExecutor) driver).executeScript("window.scrollBy("+xcord+","+ycord+")");
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", UseCases_Link);
+    }
+
+    @Given("User clicks on Explore more")
+    public void user_clicks_on_explore_more() throws InterruptedException {
+        WebElement UseCases_Link = driver.findElement(By.xpath("/html/body/div[2]/section[8]/div/div/div[1]/div/div/a"));
         UseCases_Link.click();
 
         //After Click Url
@@ -58,10 +56,12 @@ public class Test7 {
         Assert.assertEquals(expectedUrl, actualUrl);
 
         Thread.sleep(2000);
+    }
 
-
-
-
-
+    @After
+    public void closeBrowser() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
