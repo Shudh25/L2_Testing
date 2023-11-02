@@ -8,9 +8,10 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 
 //          6th not completed
-        features = "/home/xs390-shupan/L2_Testing/TestingOps/src/test/java/features/Test10.feature",
+        features = "/home/xs390-shupan/L2_Testing/TestingOps/src/test/java/features/Test7.feature",
 //        features = "/home/xs390-shupan/L2_Testing/TestingOps/src/test/java/features",
-        glue =  "stepDefinition"
+        glue =  "stepDefinition",
+        plugin = {"pretty","html:target/HtmlReports/html-report.html"}
 )
 public class TestRunner {
 }

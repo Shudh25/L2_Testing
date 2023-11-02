@@ -18,6 +18,7 @@ public class Test2 {
     @Given("User is on the login page")
     public void user_is_on_the_login_page() throws InterruptedException {
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
 //        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         driver.get("https://xenonstack.jobs/app/login");
         Thread.sleep(2000);
@@ -27,7 +28,7 @@ public class Test2 {
     public void user_enters_valid_username_and_password() throws InterruptedException {
         // Locate and enter the username and password fields
         driver.findElement(By.id("tpt_loginUsername")).sendKeys("pandey252001@gmail.com");
-        driver.findElement(By.id("tpt_loginPassword")).sendKeys("pass");
+        driver.findElement(By.id("tpt_loginPassword")).sendKeys("Shudhxenonstack@25");
         Thread.sleep(2000);
     }
 

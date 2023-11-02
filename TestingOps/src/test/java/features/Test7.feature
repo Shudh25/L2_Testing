@@ -1,4 +1,4 @@
-Feature: Testing the Social Links
+Feature: Testing the UseCases Section
 
   Scenario: Testing the Links
     Given User is on Use Cases

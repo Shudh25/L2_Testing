@@ -42,7 +42,10 @@ public class Test7 {
         System.out.println("yCord : "+ycord +" pixels");
 
 //        ((JavascriptExecutor) driver).executeScript("window.scrollBy("+xcord+","+ycord+")");
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", UseCases_Link);
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,"+ycord+")");
+//        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", UseCases_Link);
+        Thread.sleep(3000);
+
     }
 
     @Given("User clicks on Explore more")

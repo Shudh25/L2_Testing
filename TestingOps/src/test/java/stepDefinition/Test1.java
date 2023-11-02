@@ -27,10 +27,6 @@ public class Test1 {
     public void the_homepage_is_loaded() {
         System.out.println("STEP2 COMPLETED");
     }
-    @Then("the user should see the homepage")
-    public void the_user_should_see_the_homepage() {
-        System.out.println("STEP3 COMPLETED");
-    }
 
     @After
     public void closeBrowser() {
